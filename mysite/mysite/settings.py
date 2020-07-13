@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h_*esoxflr463d(b@=wk0-rfpv%_o8g^gekbv18w8!n7zt_)jt'
+SECRET_KEY = None
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 
 """
 Templates that belong to a particular application should be placed in that application’s
-template directory (e.g. polls/templates) rather than the project’s (templates). 
+template directory (e.g. polls/templates) rather than the project’s (templates).
 """
 
 TEMPLATES = [
