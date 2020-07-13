@@ -1,0 +1,13 @@
+/* Restart the server to apply changes. */
+li a {
+    color: green;
+}
+body {
+    background: white url("images/background.gif") no-repeat;
+}
+
+/*
+   The static files howto: https://docs.djangoproject.com/en/3.0/howto/static-files/
+   The staticfiles reference: https://docs.djangoproject.com/en/3.0/ref/contrib/staticfiles/
+   Deploying static files: https://docs.djangoproject.com/en/3.0/howto/static-files/deployment/
+/*

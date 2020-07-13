@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <!-- since we've defined the name argument in the path() functions in the polls.urls module -->
+        <!-- <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> can be written as: -->
+        <!-- {% url <view's name> query}, so if we change 'detail' to 'results', we will get '<int:question_id>/results/'-->
+        <!-- After we specify app_name in urls.py, we need to change 'detail' to 'polls:detail' to specify -->
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <!-- The way this works is by looking up the URL definition as specified in the polls.urls module -->
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
