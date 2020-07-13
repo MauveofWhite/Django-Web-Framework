@@ -9,7 +9,9 @@ from .models import Question, Choice
 
 # Adding choices one-by-one is an inefficient way of adding Choice objects to the system.
 # It’d be better if you could add a bunch of Choices directly when you create the Question object.
-class ChoiceInline(admin.StackedInline):
+# StackedInline - each choice text and vote take one line.
+# TabularInline - one choice (text and vote) take one line. (more compressed)
+class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
 # This tells Django: “Choice objects are edited on the Question admin page. By default, provide enough fields for 3 choices.”
