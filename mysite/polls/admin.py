@@ -28,5 +28,8 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInline]
 
+    # This line displays pub_date and was_published_recently on http://127.0.0.1:8000/admin/polls/question/
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)

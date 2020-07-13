@@ -30,7 +30,14 @@ class Question(models.Model):
 
         # Fixed:
         now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now 
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+
+    # This changes the name of 'was_published_recently' in admin page
+    # http://127.0.0.1:8000/admin/polls/question/?o=2
+    # And change the boolean value to an icon (check and X)
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Published recently?'
 
 class Choice(models.Model):
     # ForeignKey tells Django that each Choice is related to a single Question.
