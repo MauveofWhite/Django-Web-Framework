@@ -31,5 +31,11 @@ class QuestionAdmin(admin.ModelAdmin):
     # This line displays pub_date and was_published_recently on http://127.0.0.1:8000/admin/polls/question/
     list_display = ('question_text', 'pub_date', 'was_published_recently')
 
+    # This line adds a filter based on the pub_date, including: Any date, Today, Past 7 days, This month, This year
+    list_filter = ['pub_date']
+
+    # This line adds the searching ability
+    search_fields = ['question_text']
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)

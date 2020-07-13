@@ -56,10 +56,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+"""
+Templates that belong to a particular application should be placed in that application’s
+template directory (e.g. polls/templates) rather than the project’s (templates). 
+"""
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
