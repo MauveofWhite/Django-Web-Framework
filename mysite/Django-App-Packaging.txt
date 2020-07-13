@@ -1,0 +1,40 @@
+App Packaging
+https://docs.djangoproject.com/en/3.0/intro/reusable-apps/
+
+1. Create parent directory 'parent'
+
+2. Move app to parent directory 'parent'
+
+3. Create 'parent/README.rst'
+
+4. Create 'parent/LICENSE'. Default BSD-3-Clause
+
+5. Create 'parent/setup.cfg' and 'parent/setup.py'
+
+6. Create 'parent/MANIFEST.in'
+
+7. Create 'parent/docs' that put addition documentation and
+  add 'recursive-include docs *' in MANIFEST.in
+
+8. In 'parent', run python setup.py sdist
+
+Using your own package
+
+1. To install the package, use pip.
+python -m pip install --user django-polls/dist/django-polls-0.1.tar.gz
+
+2. Run the server again to confirm this.
+
+3. To uninstall the package, use pip:
+python -m pip uninstall django-polls
+
+Installing Python packages with a virtual environment
+Earlier, we installed the polls app as a user library. This has some disadvantages:
+- Modifying the user libraries can affect other Python software on your system.
+- You won’t be able to run multiple versions of this package (or others with the same name).
+
+Typically, these situations only arise once you’re maintaining several Django projects. When they do, the best solution is to use venv*. This tool allows you to maintain multiple isolated Python environments, each with its own copy of the libraries and package namespace.
+
+*: Virtual Environments and Packages 
+- https://docs.python.org/3/tutorial/venv.html
+
